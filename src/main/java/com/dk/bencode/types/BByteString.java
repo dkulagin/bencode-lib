@@ -9,11 +9,19 @@ public class BByteString implements BElement, Comparable<BByteString> {
     private final byte[] value;
 
     public BByteString(byte[] value) {
+        if (null == value) {
+            throw new IllegalArgumentException("value == null");
+        }
+
         this.value = value;
     }
 
     public BByteString(String string) {
-        this(string.getBytes());
+        if (null == string) {
+            throw new IllegalArgumentException("string == null");
+        }
+
+        value = string.getBytes();
     }
 
     public byte[] getValue() {

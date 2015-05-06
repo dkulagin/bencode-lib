@@ -7,6 +7,10 @@ public class BInteger implements BElement {
     private final long value;
 
     public BInteger(Long value) {
+        if (null == value) {
+            throw new IllegalArgumentException("value == null");
+        }
+
         this.value = value;
     }
 

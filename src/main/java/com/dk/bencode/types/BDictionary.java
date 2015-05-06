@@ -10,6 +10,10 @@ public class BDictionary implements BElement {
     Map<BByteString, BElement> value;
 
     public BDictionary(TreeMap<BByteString, BElement> value) {
+        if (null == value) {
+            throw new IllegalArgumentException("value == null");
+        }
+
         this.value = value;
     }
 

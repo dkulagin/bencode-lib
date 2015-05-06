@@ -9,6 +9,10 @@ public class BList implements BElement {
     private List<BElement> value;
 
     public BList(List<BElement> value) {
+        if (null == value) {
+            throw new IllegalArgumentException("value == null");
+        }
+
         this.value = value;
     }
 

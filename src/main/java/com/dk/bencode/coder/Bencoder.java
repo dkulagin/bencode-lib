@@ -37,10 +37,14 @@ public class Bencoder {
      * Writes BElement to the stream.
      *
      * @param os      output stream
-     * @param element element to write
+     * @param element element to write, must not be null
      * @throws IOException if output stream throws an exception
      */
     public void write(BufferedOutputStream os, BElement element) throws IOException {
+        if (null == element) {
+            throw new IllegalArgumentException("element == null");
+        }
+
         serializer.write(os, element);
     }
 }
